@@ -1,6 +1,5 @@
 public class Hello {
     public static void main(String[] args) {
-        System.out.println( "<!doctype html>" );
         System.out.println ("<!doctype html>" );
         System.out.println( "<html lang='en'>" );
   
