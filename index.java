@@ -11,23 +11,23 @@ public class index {
         lecteur();
     }
     public static void IndexJava() throws IOException{
-     // try{
-        PrintWriter writer = new PrintWriter("index.html","UTF-8");
-        writer.print("<!doctype html>\r\n"
-        + "<html lang='en'>\r\n"
-        + " <head>\r\n"
-        + "   <meta charset=\"utf-8\">\r\n"
-        + "   <title>GO Securi</title>\r\n"
-        + " </head>\r\n"
-        + " <body>\r\n"
-        + "   <center>\r\n"
-        + "   <img src=\"C:/Users/Avensys/Documents/perso/MSPR/MSPR/src/logo.png\" alt=\"image\" height=\"100\" />\r\n"
-        + "   </center>\r\n"
-        + "   <u>La liste des Acteurs :</u>\r\n"
-        + " </body>\r\n"
-        + "</html>\r\n"
-        );
-       
+     try (
+        PrintWriter writer = new PrintWriter("index.html","UTF-8")) {
+            writer.print("<!doctype html>\r\n"
+            + "<html lang='en'>\r\n"
+            + " <head>\r\n"
+            + "   <meta charset=\"utf-8\">\r\n"
+            + "   <title>GO Securi</title>\r\n"
+            + " </head>\r\n"
+            + " <body>\r\n"
+            + "   <center>\r\n"
+            + "   <img src=\"C:/Users/Avensys/Documents/perso/MSPR/MSPR/src/logo.png\" alt=\"image\" height=\"100\" />\r\n"
+            + "   </center>\r\n"
+            + "   <u>La liste des Acteurs :</u>\r\n"
+            + " </body>\r\n"
+            + "</html>\r\n"
+            );
+        }
         BufferedReader br = new BufferedReader(new FileReader("texte.txt"));
         try{
             String i;
