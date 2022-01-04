@@ -3,6 +3,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 public class URLReader {
+    //recupere le fichier GIT via l'url et ça l'écrit
     public static void main(String[] args) throws Exception {
         URL url = new URL("https://raw.githubusercontent.com/MsprEpsi/MSPR-Client/main/cbertier.txt");
         BufferedReader read = new BufferedReader(
