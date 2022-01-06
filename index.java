@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -26,9 +25,20 @@ public class index {
         br.close();
       }
       String agents = "";
+      String agentsInfo;
       for(int i = 0; i < listAgent.size(); i++){
+            agentsInfo = "";
             agents = listAgent.get(i)+"\r";
-      
+            URL urlAgent = new URL("https://raw.githubusercontent.com/MsprEpsi/MSPR-Client/main/"+listAgent.get(i)+".txt");
+            BufferedReader brAgent = new BufferedReader(
+            new InputStreamReader(urlAgent.openStream()));
+            try{
+                String j;
+                while ((j = brAgent.readLine()) != null)
+                    agentsInfo+=j+"</br>";
+            }finally{
+                brAgent.close();
+            }
         try (
             PrintWriter writer = new PrintWriter(listAgent.get(i)+".html","UTF-8")) {
                 writer.print("<!doctype html>\r\n"
@@ -39,9 +49,10 @@ public class index {
                 + " </head>\r\n"
                 + " <body>\r\n"
                 + "   <center>\r\n"
-                + "   <img src=\"C:/Users/Avensys/Documents/perso/MSPR/MSPR/src/logo.png\" alt=\"image\" height=\"100\" />\r\n"
+                + "   <img src=\"https://raw.githubusercontent.com/MsprEpsi/MSPR/main/src/logo.png\" alt=\"image\" height=\"100\" />\r\n"
                 + "   </center>\r\n"
                 + agents
+                + agentsInfo
                 + " </body>\r\n"
                 + "</html>\r\n"
                 );
